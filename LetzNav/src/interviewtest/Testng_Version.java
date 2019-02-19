@@ -2,6 +2,8 @@ package interviewtest;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,15 +49,16 @@ public class Testng_Version {
 	@Test(priority=0)
 	public void login() throws Exception
 	{
-		PageObjectModel1 page = new PageObjectModel1(driver);
-		
-		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
+		String path=System.getProperty("user.dir")+"/letznavsheet.xlsx";
+		File src = new File(path);
+		FileInputStream fis = new FileInputStream(src);
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		
-		String username = sheet.getRow(2).getCell(0).getStringCellValue();
-		String password = sheet.getRow(2).getCell(1).getStringCellValue();
-		
-		
+		String username = sheet.getRow(1).getCell(0).getStringCellValue();
+		String password = sheet.getRow(1).getCell(1).getStringCellValue();
+		workbook.close();
+		PageObjectModel1 page = new PageObjectModel1(driver);
 		
 		page.UN.sendKeys(username);		
 		page.PWD.sendKeys(password);
@@ -94,11 +97,9 @@ public class Testng_Version {
 		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
 		XSSFSheet sheet = workbook.getSheetAt(1);
 		
-		String rolename = sheet.getRow(2).getCell(0).getStringCellValue();
-		String roledescription = sheet.getRow(2).getCell(1).getStringCellValue();
-		
-		
-		
+		String rolename = sheet.getRow(1).getCell(0).getStringCellValue();
+		String roledescription = sheet.getRow(1).getCell(1).getStringCellValue();
+		workbook.close();		
 		
 		PageObjectModel1 page = new PageObjectModel1(driver);
 		Thread.sleep(2000);
@@ -164,11 +165,9 @@ public class Testng_Version {
 		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
 		XSSFSheet sheet = workbook.getSheetAt(2);
 		
-		String name = sheet.getRow(2).getCell(0).getStringCellValue();
-		String email = sheet.getRow(2).getCell(1).getStringCellValue();
-		
-		
-		
+		String name = sheet.getRow(1).getCell(0).getStringCellValue();
+		String email = sheet.getRow(1).getCell(1).getStringCellValue();
+		workbook.close();			
 		
 		PageObjectModel1 page = new PageObjectModel1(driver);
 		Thread.sleep(2000);
@@ -197,9 +196,7 @@ public class Testng_Version {
 			page.User_Active_CheckBox.click();
 			Thread.sleep(4000);
 			page.User_Name.sendKeys(name);
-			page.User_Email.sendKeys(email
-					
-					);
+			page.User_Email.sendKeys(email);
 			 
 			Thread.sleep(6000);
 			
@@ -223,9 +220,8 @@ public class Testng_Version {
 			Thread.sleep(10000);
 			
 			String actualResult = driver.findElement(By.xpath("//table/tbody/tr[2]/td[1]")).getText();
-			
-			System.out.println(actualResult);
 			Assert.assertEquals(actualResult,"BajiPrasadCH");
+			System.out.println("User is added successfully");
 		 
 	}else{
 		
@@ -233,12 +229,6 @@ public class Testng_Version {
 		System.out.println("User Name is already exist");
 	}
 	}
-
-	
-
-			
-		
-
 
 	@AfterClass
 	public void close()
