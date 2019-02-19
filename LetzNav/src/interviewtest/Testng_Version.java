@@ -1,6 +1,13 @@
 package interviewtest;
 
+import static org.testng.Assert.assertEquals;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,9 +48,17 @@ public class Testng_Version {
 	public void login() throws Exception
 	{
 		PageObjectModel1 page = new PageObjectModel1(driver);
-				
-		page.UN.sendKeys("admin@letznav.com");		
-		page.PWD.sendKeys("letznav@123");
+		
+		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		
+		String username = sheet.getRow(2).getCell(0).getStringCellValue();
+		String password = sheet.getRow(2).getCell(1).getStringCellValue();
+		
+		
+		
+		page.UN.sendKeys(username);		
+		page.PWD.sendKeys(password);
 		WebElement Login_Button = page.Submit;
 		
 		if(Login_Button.isEnabled()){
@@ -72,8 +87,19 @@ public class Testng_Version {
 
 
 	@Test(priority=2)
-	public void addRole() throws InterruptedException
+	public void addRole() throws InterruptedException, IOException
 	{
+		
+		
+		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
+		XSSFSheet sheet = workbook.getSheetAt(1);
+		
+		String rolename = sheet.getRow(2).getCell(0).getStringCellValue();
+		String roledescription = sheet.getRow(2).getCell(1).getStringCellValue();
+		
+		
+		
+		
 		PageObjectModel1 page = new PageObjectModel1(driver);
 		Thread.sleep(2000);
 		page.Roles.click();
@@ -82,16 +108,7 @@ public class Testng_Version {
 		
 		
 		ArrayList<WebElement> rn = (ArrayList<WebElement>)driver.findElements(By.xpath("(//table/tbody/tr)/td[1]"));
-		
-		/*for(WebElement e:rn)
-		{
-			System.out.println(e.getText());
-		}
-		*/
-		
-		
-		
-		
+				
 		boolean status = false;
 		
 		for(int i=0; i<rn.size(); i++)
@@ -109,8 +126,8 @@ public class Testng_Version {
 		if (status==false)
 		{
 			page.AddRole.click();
-			page.RoleName.sendKeys("Test Interview");
-			page.RoleDesc.sendKeys("This is Test Interview purpose");
+			page.RoleName.sendKeys(rolename);
+			page.RoleDesc.sendKeys(roledescription);
 			
 			Thread.sleep(4000);
 			WebElement ele = driver.findElement(By.xpath("//div[@class='mat-select-trigger']")); 
@@ -127,12 +144,12 @@ public class Testng_Version {
 			String ActualResult=driver.findElement(By.xpath("//table/tbody/tr[11]/td[1]")).getText();
 			Assert.assertEquals(ActualResult, "Test Interview");		
 			
-			System.out.println("Role is added successfully");
+			System.out.println("Role Name is added successfully");
 		}else{
 		
 		
 		Assert.assertTrue(status);
-		System.out.println("User Role is already exist");
+		System.out.println("Role Name is already exist");
 		}
 
 		
@@ -140,16 +157,25 @@ public class Testng_Version {
 
 
 	@Test(priority=3)
-	public void addUser() throws InterruptedException
+	public void addUser() throws InterruptedException, IOException
 	{
+		
+
+		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\QAP30\\git\\Selenium\\LetzNav\\LetzNav\\letznavsheet.xlsx");
+		XSSFSheet sheet = workbook.getSheetAt(2);
+		
+		String name = sheet.getRow(2).getCell(0).getStringCellValue();
+		String email = sheet.getRow(2).getCell(1).getStringCellValue();
+		
+		
+		
+		
 		PageObjectModel1 page = new PageObjectModel1(driver);
 		Thread.sleep(2000);
 		page.Users.click();
 		Thread.sleep(4000);
 	
-		ArrayList<WebElement> users = (ArrayList<WebElement>)driver.findElements(By.xpath("(//table/tbody/tr)/td"));
-		
-				
+		ArrayList<WebElement> users = (ArrayList<WebElement>)driver.findElements(By.xpath("(//table/tbody/tr)/td[1]"));
 		boolean status = false;
 		
 		for(int i=0; i<users.size(); i++)
@@ -170,8 +196,10 @@ public class Testng_Version {
 			Thread.sleep(4000);
 			page.User_Active_CheckBox.click();
 			Thread.sleep(4000);
-			page.User_Name.sendKeys("BajiPrasadCH");
-			page.User_Email.sendKeys("bajiprasadch@gmail.com");
+			page.User_Name.sendKeys(name);
+			page.User_Email.sendKeys(email
+					
+					);
 			 
 			Thread.sleep(6000);
 			
@@ -185,23 +213,31 @@ public class Testng_Version {
 			dropdown.moveToElement(w2).doubleClick().build().perform();
 			
 			
-			
+			Thread.sleep(6000);
 			driver.findElement(By.xpath("//div[@class='mat-radio-label-content']")).click(); 
-			
+			Thread.sleep(6000);
 			driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
 			
+			Thread.sleep(10000);
+			driver.navigate().refresh();
+			Thread.sleep(10000);
 			
-			String ActualResult=driver.findElement(By.xpath("//table/tbody/tr[2]/td[1]")).getText();
-			Assert.assertEquals(ActualResult, "BajiPrasadCH");		
+			String actualResult = driver.findElement(By.xpath("//table/tbody/tr[2]/td[1]")).getText();
 			
-			System.out.println("User is added successfully");
-		}else{		
+			System.out.println(actualResult);
+			Assert.assertEquals(actualResult,"BajiPrasadCH");
+		 
+	}else{
 		
 		Assert.assertTrue(status);
-		System.out.println("User is already exist");
-		}	
-		
+		System.out.println("User Name is already exist");
 	}
+	}
+
+	
+
+			
+		
 
 
 	@AfterClass
