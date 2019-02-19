@@ -1,0 +1,69 @@
+{
+  "manifest_version": 2,
+  "name": "LetzNav Editor",
+  "version": "2.5.1842",
+  "description": "",
+  "icons": {
+    "16": "assets/icon/icon16.png",
+    "32": "assets/icon/icon32.png",
+    "48": "assets/icon/icon48.png",
+    "128": "assets/icon/icon128.png"
+  },
+  "permissions": [
+    "<all_urls>",
+    "browsingData",
+    "cookies",
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "identity"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "web_accessible_resources": [
+    "*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://111.93.27.187:8889/*",
+        "http://ppmdemo.letznav.com/*",
+        "https://letznav.atlassian.net/*",
+        "https://ven01642.service-now.com/*",
+        "https://github.com/*",
+        "https://rally1.rallydev.com/*",
+        "https://www14.v1host.com/*",
+        "https://impl.workday.com/*",
+        "https://ap4.salesforce.com/*",
+        "https://ap4.lightning.force.com/*",
+        "https://www.facebook.com/*"
+      ],
+      "exclude_globs": [
+        "*.pdf*"
+      ],
+      "js": [
+        "polyfills.bundle.js",
+        "vendor.bundle.js",
+        "main.bundle.js",
+        "libraries.bundle.js"
+      ],
+      "css": [
+        "styles.bundle.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "scripts": [
+      "polyfills.bundle.js",
+      "vendor.bundle.js",
+      "background.bundle.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "LetzNav Editor"
+  },
+  "update_url": "https://letz-interview.herokuapp.com/api/public/admin/extensions/editor/updates.xml"
+}

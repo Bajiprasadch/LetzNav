@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="15px" viewBox="0 0 19 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>settings-icon--fontsize</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Player-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letzNav_player--settings" transform="translate(-766.000000, -607.000000)" fill="#000000">
+            <path d="M766,615.015625 L766,612.015625 L775.007407,612.015625 L775.007407,615.015625 L772.004938,615.015625 L772.004938,622 L769.002469,622 L769.002469,615.015625 L766,615.015625 Z M772.004938,607 L785,607 L785,610 L780.02716,610 L780.02716,622 L777.024691,622 L777.024691,610 L772.004938,610 L772.004938,607 Z" id="settings-icon--fontsize"></path>
+        </g>
+    </g>
+</svg>

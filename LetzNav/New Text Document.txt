@@ -1,0 +1,8 @@
+Credential Details:
+Environment: https://letz-interview.herokuapp.com/
+
+ 
+
+User name: admin@letznav.com
+
+Pwd: letznav@123

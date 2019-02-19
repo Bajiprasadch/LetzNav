@@ -1,0 +1,7 @@
+{
+  "isDemo": false,
+  "isDev": false,
+  "hasBranding": true,
+  "backendUrl": "https://letz-interview.herokuapp.com",
+  "isFloatingPanelEnabled": false
+}

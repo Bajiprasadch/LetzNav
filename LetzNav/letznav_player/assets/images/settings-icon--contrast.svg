@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>settings-icon--contrast</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Player-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letzNav_player--settings" transform="translate(-767.000000, -566.000000)" fill="#000000">
+            <path d="M769.34,568.36 C770.913342,566.786658 772.79999,566 775,566 C777.200012,566 779.083326,566.783326 780.65,568.35 C782.216674,569.916674 783,571.799988 783,574 C783,576.20001 782.216674,578.083326 780.65,579.65 C779.083326,581.216674 777.200012,582 775,582 C772.79999,582 770.916674,581.216674 769.35,579.65 C767.783326,578.083326 767,576.20001 767,574 C767,571.799988 767.779992,569.920008 769.34,568.36 Z M775,568 L775,580 C776.653342,580 778.06666,579.41334 779.24,578.24 C780.41334,577.06666 781,575.653342 781,574 C781,572.346658 780.41334,570.93334 779.24,569.76 C778.06666,568.58666 776.653342,568 775,568 Z" id="settings-icon--contrast"></path>
+        </g>
+    </g>
+</svg>
