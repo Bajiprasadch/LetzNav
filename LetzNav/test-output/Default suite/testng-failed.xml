@@ -5,11 +5,9 @@
     <classes>
       <class name="interviewtest.Testng_Version">
         <methods>
-          <include name="addRole"/>
           <include name="openBrowser"/>
           <include name="addUser"/>
           <include name="close"/>
-          <include name="systemSettings"/>
         </methods>
       </class> <!-- interviewtest.Testng_Version -->
     </classes>

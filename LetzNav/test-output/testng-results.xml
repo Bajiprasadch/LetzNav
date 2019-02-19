@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="40204" started-at="2019-02-19T05:42:55Z" finished-at="2019-02-19T05:43:35Z">
+  <suite name="Default suite" duration-ms="40732" started-at="2019-02-19T07:52:43Z" finished-at="2019-02-19T07:53:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="40204" started-at="2019-02-19T05:42:55Z" finished-at="2019-02-19T05:43:35Z">
+    <test name="Default test" duration-ms="40732" started-at="2019-02-19T07:52:43Z" finished-at="2019-02-19T07:53:23Z">
       <class name="interviewtest.Testng_Version">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="openBrowser" is-config="true" duration-ms="17011" started-at="2019-02-19T05:42:55Z" finished-at="2019-02-19T05:43:12Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="openBrowser" is-config="true" duration-ms="17646" started-at="2019-02-19T07:52:43Z" finished-at="2019-02-19T07:53:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="login" duration-ms="5312" started-at="2019-02-19T05:43:12Z" finished-at="2019-02-19T05:43:17Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="login" duration-ms="5312" started-at="2019-02-19T07:53:00Z" finished-at="2019-02-19T07:53:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="systemSettings()[pri:1, instance:interviewtest.Testng_Version@121c9d6]" name="systemSettings" duration-ms="2213" started-at="2019-02-19T05:43:17Z" finished-at="2019-02-19T05:43:19Z">
+        <test-method status="PASS" signature="systemSettings()[pri:1, instance:interviewtest.Testng_Version@121c9d6]" name="systemSettings" duration-ms="2205" started-at="2019-02-19T07:53:06Z" finished-at="2019-02-19T07:53:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- systemSettings -->
-        <test-method status="PASS" signature="addRole()[pri:2, instance:interviewtest.Testng_Version@121c9d6]" name="addRole" duration-ms="7317" started-at="2019-02-19T05:43:19Z" finished-at="2019-02-19T05:43:27Z">
+        <test-method status="PASS" signature="addRole()[pri:2, instance:interviewtest.Testng_Version@121c9d6]" name="addRole" duration-ms="7294" started-at="2019-02-19T07:53:08Z" finished-at="2019-02-19T07:53:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addRole -->
-        <test-method status="PASS" signature="addUser()[pri:3, instance:interviewtest.Testng_Version@121c9d6]" name="addUser" duration-ms="6243" started-at="2019-02-19T05:43:27Z" finished-at="2019-02-19T05:43:33Z">
+        <test-method status="PASS" signature="addUser()[pri:3, instance:interviewtest.Testng_Version@121c9d6]" name="addUser" duration-ms="6175" started-at="2019-02-19T07:53:15Z" finished-at="2019-02-19T07:53:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="close" is-config="true" duration-ms="2076" started-at="2019-02-19T05:43:33Z" finished-at="2019-02-19T05:43:35Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:interviewtest.Testng_Version@121c9d6]" name="close" is-config="true" duration-ms="2076" started-at="2019-02-19T07:53:21Z" finished-at="2019-02-19T07:53:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
